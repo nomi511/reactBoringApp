@@ -1,8 +1,10 @@
 const Footer = () => {
     return ( 
-        <div>
+        <footer>
+
+            <p>All rights reserved &copy; 2021</p>
             
-        </div>
+        </footer>
      );
 }
  
