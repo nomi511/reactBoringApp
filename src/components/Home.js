@@ -1,13 +1,18 @@
-import { useState } from "react";
+
 import useFetch from "./useFetch";
 
-const Home = () => {
 
+const Home = ( { arr, array } ) => {
 
-    
     const {data, load, err} = useFetch('http://www.boredapi.com/api/activity/');
-
-
+    
+    const update = () => {
+        array([...arr, {
+            id: array.length,
+            value: data.activity,
+            done: false
+        }])
+    }
 
     return ( 
 
@@ -27,8 +32,10 @@ const Home = () => {
                             <h3> {data.activity} </h3>
                         </div>
 
-                        <button className="likebtn"> <i class="icon-heart"></i></button>
-
+                        <div className="sbtn">
+                            <button className="likebtn"  onClick={ () => {update() }} > <i className="icon-heart"></i></button>
+                        </div>
+                        
                         </div>
                         
                     }

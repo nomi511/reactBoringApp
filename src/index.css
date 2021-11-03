@@ -130,3 +130,7 @@ footer
   background-color: black;
   color: azure;
 }
+
+.activityflex .sbtn {
+  padding-top: 5%;
+}

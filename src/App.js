@@ -9,7 +9,17 @@ import Like from "./components/Like"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 
+import { useState } from "react"
+
+
 function App() {
+
+  const [arr, array] = useState([])
+  
+
+  
+
+
   return (
     <Router>
 
@@ -22,11 +32,11 @@ function App() {
           <Switch>
 
             <Route exact path="/">
-              <Home />
+              <Home arr={arr} array = { array } />
             </Route>
 
             <Route path="/Like">
-              <Like />
+              <Like arr={arr} />
             </Route>
 
           </Switch>
