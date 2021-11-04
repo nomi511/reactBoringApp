@@ -1,17 +1,30 @@
 
 import useFetch from "./useFetch";
+import { useEffect } from "react";
 
 
 const Home = ( { arr, array } ) => {
 
     const {data, load, err} = useFetch('http://www.boredapi.com/api/activity/');
+    let sarr
+    let count = 1
     
     const update = () => {
-        array([...arr, {
-            id: array.length,
+
+
+        array([arr, {
+            id: count,
             value: data.activity,
             done: false
         }])
+
+        count++
+
+        sarr = JSON.stringify(arr)
+        localStorage.setItem("Tasks",sarr)
+
+        
+    
     }
 
     return ( 
@@ -33,7 +46,7 @@ const Home = ( { arr, array } ) => {
                         </div>
 
                         <div className="sbtn">
-                            <button className="likebtn"  onClick={ () => {update() }} > <i className="icon-heart"></i></button>
+                            <button className="likebtn"  onClick={()=>{update()}} > <i className="icon-heart"></i></button>
                         </div>
                         
                         </div>

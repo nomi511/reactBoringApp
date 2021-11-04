@@ -1,6 +1,5 @@
 
 import Navigation from "./components/Navbar"
-import Footer from "./components/Footer"
 
 import Home from "./components/Home"
 import Like from "./components/Like"
@@ -9,15 +8,20 @@ import Like from "./components/Like"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 
 function App() {
 
-  const [arr, array] = useState([])
-  
+  const [arr, array] = useState()
 
-  
+  useEffect ( ()=> {
+
+    let ldata = JSON.parse(localStorage.getItem("Tasks"))
+
+    array(ldata)
+
+  }, [] )
 
 
   return (
@@ -36,14 +40,14 @@ function App() {
             </Route>
 
             <Route path="/Like">
-              <Like arr={arr} />
+              <Like arr={arr} array={array} />
             </Route>
 
           </Switch>
 
         </div>
 
-        <Footer />
+        
 
       </div>
 

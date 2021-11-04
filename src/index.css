@@ -63,7 +63,7 @@ footer
 }
 
 .pbody {
-  height: 75vh;
+  height: 88vh;
   background-image: url(./lazy.jpeg);
   background-repeat: no-repeat;
   background-size: 100%;
@@ -133,4 +133,68 @@ footer
 
 .activityflex .sbtn {
   padding-top: 5%;
+}
+
+
+
+.likedpage {
+  color: azure;
+  padding-top: 2%;
+  
+  
+}
+
+.likedpage h2 {
+  text-align: center;
+  color: black;
+  
+}
+
+
+.likedpage .valuescenter {
+
+  width: 45%;
+  height: 55vh;
+  margin-left: 25%;
+  overflow-y: scroll;
+  padding: 50px;
+  border-radius: 20px;
+  
+  background-color: rgba(0,0,0,0.5);
+
+}
+
+.likedpage .values {
+
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  display: flex;
+  border-radius: 50px;
+  justify-content: space-between;
+  align-items: center;
+  background-color:rgb(119, 112, 98);
+
+}
+
+.likedpage .values .taskcontent
+{
+  margin-left: 20px;
+}
+
+.likedpage .values button {
+
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  margin-right: 10px;
+  background-color: rgba(0,0,0,0.5);
+  color: azure;
+
+}
+
+.likedpage .values button:hover {
+  background-color: orange;
+  color: azure;
 }
