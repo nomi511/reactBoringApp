@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react"
+
 
 const Like = ({ arr, array }) => {
 
@@ -9,12 +9,13 @@ const Like = ({ arr, array }) => {
         console.log(arr[el.id])
         console.log(el.id)
 
-        //localStorage.removeItem("Tasks")
+        let newarr = arr.filter( elem => elem.id !== el.id)
 
-        array( arr.filter( elem => elem.id !== el.id  ) )
+        localStorage.setItem("Tasks", JSON.stringify(newarr))
 
-        localStorage.setItem("Tasks", JSON.stringify(arr))
-       
+        array( newarr )
+
+        window.location.reload()
        
     }
 

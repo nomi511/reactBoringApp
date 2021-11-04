@@ -1,27 +1,24 @@
 
 import useFetch from "./useFetch";
-import { useEffect } from "react";
+
 
 
 const Home = ( { arr, array } ) => {
 
     const {data, load, err} = useFetch('http://www.boredapi.com/api/activity/');
+    let newarr
     let sarr
-    let count = 1
     
     const update = () => {
 
+        
 
-        array([arr, {
-            id: count,
-            value: data.activity,
-            done: false
-        }])
-
-        count++
-
-        sarr = JSON.stringify(arr)
+        newarr = arr.slice()
+        const obj = { id: arr.length, value: data.activity, done: false }
+        newarr.push(obj)
+        sarr = JSON.stringify(newarr)
         localStorage.setItem("Tasks",sarr)
+        array(newarr)
 
         
     
